@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <author>Ederson Moura &lt;ederson.moura@resource.com.br&gt;</author>
+ <class>AtmModelSelect</class>
+ <widget class="QWidget" name="AtmModelSelect">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>679</width>
+    <height>432</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Select ATM Test</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../images.qrc">
+    <normaloff>:/res/images/app-icon.png</normaloff>:/res/images/app-icon.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QLineEdit {
+    border: 2px solid #333333;
+    border-radius: 3px;
+    padding: 1px 23px 1px 3px;
+}
+
+QPushButton:hover, QToolButton:hover {
+    background: qlineargradient(x1 : 0, y1 : 0, x2 : 0, y2 :   1, stop :   0.0 #ffd9aa, stop : 0.5 #ffbb6e, stop : 0.55 #feae42, stop : 1.0 #fedb74);
+}
+
+QPushButton {
+    border: 1px solid #333333;
+    border-radius: 3px;
+    padding: 1px 23px 1px 3px;
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #797979, stop:0.48 #696969, stop:0.52 #5e5e5e, stop:1 #4f4f4f);
+    color: white;
+    font: bold large &quot;Arial&quot;;
+    height: 30px;
+}
+
+QPushButton:pressed {
+    background: qlineargradient(x1 : 0, y1 : 0, x2 : 0, y2 :   1, stop :   0.0 #c0dbff, stop : 0.5 #cfd26f, stop : 0.55 #c7df6f, stop : 1.0 #f5f9ff);
+    padding-top: 2px;
+    padding-left: 3px;
+}
+
+QPushButton:on {
+    background: qlineargradient(x1 : 0, y1 : 0, x2 : 0, y2 :   1, stop :   0.0 #5AA72D, stop : 0.5 #B3E296, stop : 0.55 #B3E296, stop : 1.0 #f5f9ff);
+    padding-top: 2px;
+    padding-left: 3px;
+}
+
+QPushButton:disabled {
+    background: transparent #aeaeae;
+    padding-top: 2px;        
+    padding-left: 3px;
+    color: black;
+}
+
+QToolButton {
+    border: 1px solid #333333;
+    border-radius: 3px;
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #797979, stop:0.48 #696969, stop:0.52 #5e5e5e, stop:1 #4f4f4f);
+}
+
+QProgressBar {
+    border: 1px solid black;
+    text-align: center;
+    padding: 1px;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    background: QLinearGradient( x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #fff, stop: 0.4999 #eee, stop: 0.5 #ddd, stop: 1 #eee );
+    width: 15px;
+}
+
+QProgressBar::chunk {
+    background: QLinearGradient( x1: 0, y1: 0, x2: 1, y2: 0,stop: 0 #78d,stop: 0.4999 #46a,stop: 0.5 #45a,stop: 1 #238 );
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border: 1px solid black;
+}
+
+QLCDNumber {
+    background-color:black;
+    color:green;
+    font: bold large &quot;Arial&quot;;
+    height: 30px;
+}
+
+QTabWidget, QStackedWidget {
+    background: none;
+    color: white;
+    font: bold large &quot;Arial&quot;;
+    height: 30px;
+}
+
+QTabWidget::pane {
+    border: 0px;
+    top: 0.1em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: grey;
+}
+
+QTabBar::tab {
+    width: 150px;
+    margin-left: 0.5;
+    margin-right: 0.5;
+    border: 1px solid #7a7a7a;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 15px 19px 15px 19px;
+}
+
+QTabBar::tab:!selected {
+   margin-top: 2px;
+}
+
+QTabBar::tab:selected {
+   margin-top: -1px;
+   background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #797979, stop:0.48 #696969, stop:0.52 #5e5e5e, stop:1 #4f4f4f);
+    color: white;
+}
+
+QTabBar::tab:hover {
+    text-decoration: underline;
+     background: qlineargradient(x1 : 0, y1 : 0, x2 : 0, y2 :   1, stop :   0.0 #ffd9aa, stop : 0.5 #ffbb6e, stop : 0.55 #feae42, stop :   1.0 #fedb74);
+}
+
+QTabBar::tab::bottom {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    padding: 15px 19px 15px 19px;
+}
+
+QComboBox {
+	border: 1px solid #333333;
+	border-radius: 3px;
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #797979, stop:0.48 #696969, stop:0.52 #5e5e5e, stop:1 #4f4f4f);
+	padding: 1px 23px 1px 3px;
+	min-width: 6em;
+    color: white;
+    font: bold large &quot;Arial&quot;;
+    height: 30px;
+}
+
+
+QComboBox:hover {
+    text-decoration: underline;
+     background: qlineargradient(x1 : 0, y1 : 0, x2 : 0, y2 :   1, stop :   0.0 #ffd9aa, stop : 0.5 #ffbb6e, stop : 0.55 #feae42, stop :   1.0 #fedb74);
+}
+
+QComboBox::drop-down {
+	subcontrol-origin: padding;
+	subcontrol-position: top right;
+	width: 20px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+QComboBox::down-arrow {
+     image: url(:res/images/combo-arrow-down.png);
+}
+
+QComboBox QAbstractItemView {
+    background-color: #4f4f4f;
+    color: white;
+   selection-background-color: qlineargradient(x1 : 0, y1 : 0, x2 : 0, y2 :   1, stop :   0.0 #ffd9aa, stop : 0.5 #ffbb6e, stop : 0.55 #feae42, stop : 1.0 #fedb74);
+}
+</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_4">
+   <item row="0" column="0">
+    <widget class="QComboBox" name="comboBoxChangeLanguage">
+     <property name="toolTip">
+      <string>Select the application language.</string>
+     </property>
+     <property name="statusTip">
+      <string/>
+     </property>
+     <property name="whatsThis">
+      <string/>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+     <item>
+      <property name="text">
+       <string>Please select the language you want</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>English</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../images.qrc">
+        <normaloff>:/res/images/flag-us.png</normaloff>:/res/images/flag-us.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Portuguese</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../images.qrc">
+        <normaloff>:/res/images/flag-br.png</normaloff>:/res/images/flag-br.png</iconset>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QComboBox" name="comboBoxChangeModelATM">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="statusTip">
+      <string>Test</string>
+     </property>
+     <property name="whatsThis">
+      <string>Test</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+     <item>
+      <property name="text">
+       <string>Please select the model of ATM you want</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../images.qrc">
+        <normaloff>:/res/images/atm-icon.png</normaloff>:/res/images/atm-icon.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>ATM Model Empresa1</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../images.qrc">
+        <normaloff>:/res/images/atm-icon.png</normaloff>:/res/images/atm-icon.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>ATM Model OKI</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../images.qrc">
+        <normaloff>:/res/images/atm-icon.png</normaloff>:/res/images/atm-icon.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>ATM Model ATEX</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../images.qrc">
+        <normaloff>:/res/images/atm-icon.png</normaloff>:/res/images/atm-icon.png</iconset>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tabModelEmpresa1">
+      <attribute name="title">
+       <string>ATM Model Empresa1</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>Printer:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="comboBoxPrinter">
+           <property name="iconSize">
+            <size>
+             <width>16</width>
+             <height>16</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QToolButton" name="toolButtonPrinter">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>...</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../images.qrc">
+             <normaloff>:/res/images/settings.png</normaloff>:/res/images/settings.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>Coin Validator:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="4">
+          <widget class="QComboBox" name="comboBoxCoinValidator">
+           <property name="iconSize">
+            <size>
+             <width>16</width>
+             <height>16</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="5">
+          <widget class="QToolButton" name="toolButtonCoinValidator">
+           <property name="text">
+            <string>...</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../images.qrc">
+             <normaloff>:/res/images/settings.png</normaloff>:/res/images/settings.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Bill Validator:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QComboBox" name="comboBoxBillValidator"/>
+         </item>
+         <item row="1" column="2">
+          <widget class="QToolButton" name="toolButtonBillValidator">
+           <property name="text">
+            <string>...</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../images.qrc">
+             <normaloff>:/res/images/settings.png</normaloff>:/res/images/settings.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Dispenser:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="4">
+          <widget class="QComboBox" name="comboBoxDispenser">
+           <property name="iconSize">
+            <size>
+             <width>16</width>
+             <height>16</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="5">
+          <widget class="QToolButton" name="toolButtonDispenser">
+           <property name="text">
+            <string>...</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../images.qrc">
+             <normaloff>:/res/images/settings.png</normaloff>:/res/images/settings.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>Multi I/O:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QComboBox" name="comboBoxMultiIo"/>
+         </item>
+         <item row="2" column="2">
+          <widget class="QToolButton" name="toolButtonMultiIo">
+           <property name="text">
+            <string>...</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../images.qrc">
+             <normaloff>:/res/images/settings.png</normaloff>:/res/images/settings.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="3">
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>UPS:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="4">
+          <widget class="QComboBox" name="comboBoxUps">
+           <property name="iconSize">
+            <size>
+             <width>16</width>
+             <height>16</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="5">
+          <widget class="QToolButton" name="toolButtonUps">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>...</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../images.qrc">
+             <normaloff>:/res/images/settings.png</normaloff>:/res/images/settings.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>SmartCard:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QComboBox" name="comboBoxSmartCardReader"/>
+         </item>
+         <item row="3" column="2">
+          <widget class="QToolButton" name="toolButtonSmartCard">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>...</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../images.qrc">
+             <normaloff>:/res/images/settings.png</normaloff>:/res/images/settings.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="3">
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>Camera:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="4">
+          <widget class="QComboBox" name="comboBoxCamera">
+           <property name="iconSize">
+            <size>
+             <width>16</width>
+             <height>16</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="5">
+          <widget class="QToolButton" name="toolButtonCamera">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>...</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../images.qrc">
+             <normaloff>:/res/images/settings.png</normaloff>:/res/images/settings.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>146</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabModelOki">
+      <attribute name="title">
+       <string>ATM Model OKI</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tabModelAtex">
+      <attribute name="title">
+       <string>ATM Model ATEX</string>
+      </attribute>
+     </widget>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <layout class="QGridLayout" name="gridLayout_3">
+     <item row="0" column="0">
+      <widget class="QPushButton" name="pushButtonCancel">
+       <property name="text">
+        <string>  &amp;Cancel</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../images.qrc">
+         <normaloff>:/res/images/cancel-run.png</normaloff>:/res/images/cancel-run.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>35</width>
+         <height>35</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>138</width>
+         <height>32</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="0" column="2">
+      <widget class="QPushButton" name="pushButtonSearchDevices">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>&amp;Scan Devices</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../images.qrc">
+         <normaloff>:/res/images/serial-scanner.png</normaloff>:/res/images/serial-scanner.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>35</width>
+         <height>35</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>98</width>
+         <height>32</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="0" column="4">
+      <widget class="QPushButton" name="pushButtonStart">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>  &amp;Start Tests</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../images.qrc">
+         <normaloff>:/res/images/start-run.png</normaloff>:/res/images/start-run.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>35</width>
+         <height>35</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../images.qrc"/>
+ </resources>
+ <connections/>
+</ui>

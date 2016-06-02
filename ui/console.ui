@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <author>Ederson Moura &lt;ederson.moura@resource.com.br&gt;</author>
+ <class>Console</class>
+ <widget class="QWidget" name="Console">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>701</width>
+    <height>443</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Console - Results of automated testing</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../images.qrc">
+    <normaloff>:/res/images/app-icon.png</normaloff>:/res/images/app-icon.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QLineEdit {
+    border: 2px solid #333333;
+    border-radius: 3px;
+    padding: 1px 23px 1px 3px;
+}
+
+QPushButton:hover, QToolButton:hover {
+    background: qlineargradient(x1 : 0, y1 : 0, x2 : 0, y2 :   1, stop :   0.0 #ffd9aa, stop : 0.5 #ffbb6e, stop : 0.55 #feae42, stop : 1.0 #fedb74);
+}
+
+QPushButton {
+    border: 1px solid #333333;
+    border-radius: 3px;
+    padding: 1px 23px 1px 3px;
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #797979, stop:0.48 #696969, stop:0.52 #5e5e5e, stop:1 #4f4f4f);
+    color: white;
+    font: bold large &quot;Arial&quot;;
+    height: 30px;
+}
+
+QPushButton:pressed {
+    background: qlineargradient(x1 : 0, y1 : 0, x2 : 0, y2 :   1, stop :   0.0 #c0dbff, stop : 0.5 #cfd26f, stop : 0.55 #c7df6f, stop : 1.0 #f5f9ff);
+    padding-top: 2px;
+    padding-left: 3px;
+}
+
+QPushButton:on {
+    background: qlineargradient(x1 : 0, y1 : 0, x2 : 0, y2 :   1, stop :   0.0 #5AA72D, stop : 0.5 #B3E296, stop : 0.55 #B3E296, stop : 1.0 #f5f9ff);
+    padding-top: 2px;
+    padding-left: 3px;
+}
+
+QPushButton:disabled {
+    background: transparent #aeaeae;
+    padding-top: 2px;        
+    padding-left: 3px;
+    color: black;
+}
+
+QToolButton {
+    border: 1px solid #333333;
+    border-radius: 3px;
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #797979, stop:0.48 #696969, stop:0.52 #5e5e5e, stop:1 #4f4f4f);
+}
+
+QProgressBar {
+    border: 1px solid black;
+    text-align: center;
+    padding: 1px;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    background: QLinearGradient( x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #fff, stop: 0.4999 #eee, stop: 0.5 #ddd, stop: 1 #eee );
+    width: 15px;
+}
+
+QProgressBar::chunk {
+    background: QLinearGradient( x1: 0, y1: 0, x2: 1, y2: 0,stop: 0 #78d,stop: 0.4999 #46a,stop: 0.5 #45a,stop: 1 #238 );
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border: 1px solid black;
+}
+
+QLCDNumber {
+    background-color:black;
+    color:green;
+    font: bold large &quot;Arial&quot;;
+    height: 30px;
+}
+
+QTabWidget, QStackedWidget {
+    background: none;
+    color: white;
+    font: bold large &quot;Arial&quot;;
+    height: 30px;
+}
+
+QTabWidget QWidget {
+    /*background-color: lightblue;*/
+}
+
+QTabWidget::pane {
+    border: 0px;
+    top: 0.1em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: grey;
+}
+
+QTabBar::tab {
+    width: 150px;
+    margin-left: 0.5;
+    margin-right: 0.5;
+    border: 1px solid #7a7a7a;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 15px 19px 15px 19px;
+}
+
+QTabBar::tab:!selected {
+   margin-top: 2px;
+}
+
+QTabBar::tab:selected {
+    margin-top: -1px;
+   /*background-color: grey;*/
+   background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #797979, stop:0.48 #696969, stop:0.52 #5e5e5e, stop:1 #4f4f4f);
+    borderwidth: 2px;
+    color: white;
+}
+
+QTabBar::tab:hover {
+    text-decoration: underline;
+     background: qlineargradient(x1 : 0, y1 : 0, x2 : 0, y2 :   1, stop :   0.0 #ffd9aa, stop : 0.5 #ffbb6e, stop : 0.55 #feae42, stop :   1.0 #fedb74);
+}
+
+QTabBar::tab::bottom {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    padding: 15px 19px 15px 19px;
+}
+
+QComboBox {
+	border: 1px solid #333333;
+	border-radius: 3px;
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #797979, stop:0.48 #696969, stop:0.52 #5e5e5e, stop:1 #4f4f4f);
+	padding: 1px 23px 1px 3px;
+	min-width: 6em;
+    color: white;
+    font: bold large &quot;Arial&quot;;
+    height: 30px;
+}
+
+QComboBox:hover {
+    text-decoration: underline;
+     background: qlineargradient(x1 : 0, y1 : 0, x2 : 0, y2 :   1, stop :   0.0 #ffd9aa, stop : 0.5 #ffbb6e, stop : 0.55 #feae42, stop :   1.0 #fedb74);
+}
+
+QComboBox::drop-down {
+	subcontrol-origin: padding;
+	subcontrol-position: top right;
+	width: 20px;
+ 
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+QComboBox::down-arrow {
+     image: url(:res/images/combo-arrow-down.png);
+}
+ 
+QComboBox QAbstractView{
+	background-color: #4f4f4f;
+	color: #999999;
+	selection-background-color: #999999;
+	selection-color: #4f4f4f;
+}
+</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_3">
+   <item row="0" column="0">
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="0" column="0">
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>188</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLCDNumber" name="lcdNumber">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>188</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0">
+    <widget class="QPlainTextEdit" name="plainTextEdit">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <property name="lineWidth">
+      <number>1</number>
+     </property>
+     <property name="midLineWidth">
+      <number>0</number>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QProgressBar" name="progressBar">
+     <property name="value">
+      <number>24</number>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QPushButton" name="pushButtonBack">
+       <property name="text">
+        <string>Back</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../images.qrc">
+         <normaloff>:/res/images/back-run.png</normaloff>:/res/images/back-run.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>35</width>
+         <height>35</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <spacer name="horizontalSpacer_6">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>228</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLabel" name="labelTestsFaileds">
+       <property name="text">
+        <string>Failed:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>188</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="0" column="4">
+      <widget class="QPushButton" name="pushButtonOk">
+       <property name="text">
+        <string>&amp;Manual Tests</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../images.qrc">
+         <normaloff>:/res/images/manual.png</normaloff>:/res/images/manual.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>35</width>
+         <height>35</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../images.qrc"/>
+ </resources>
+ <connections/>
+</ui>
